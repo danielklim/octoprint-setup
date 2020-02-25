@@ -1,0 +1,8 @@
+$USERS_NAME:
+  active: true
+  apikey: null
+  password: $USERS_PASSWORD
+  roles:
+  - user
+  - admin
+  settings: {}

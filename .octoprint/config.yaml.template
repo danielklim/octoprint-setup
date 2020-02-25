@@ -1,0 +1,60 @@
+accessControl:
+  autologinAs: $USERS_NAME
+  autologinLocal: true
+  enabled: true
+  localNetworks:
+  - 10.0.0.0/8
+  - 127.0.0.0/8
+  - localhost
+  salt: $CONFIG_AC_SALT
+api:
+  key: $CONFIG_API_KEY
+plugins:
+  announcements:
+    _config_version: 1
+    channels:
+      _blog:
+        read_until: 1576506900
+      _important:
+        read_until: 1521111600
+      _octopi:
+        read_until: 1573722900
+      _plugins:
+        read_until: 1581033600
+      _releases:
+        read_until: 1581427500
+  discovery:
+    upnpUuid: $PLUGINS_UPNPUUID
+  errortracking:
+    unique_id: $PLUGINS_ERRORTRACKING_UID
+  softwareupdate:
+    _config_version: 6
+  tracking:
+    enabled: false
+    unique_id: $PLUGINS_TRACKING_UID
+printerProfiles:
+  default: ender_3
+server:
+  commands:
+    serverRestartCommand: sudo systemctl restart octoprint
+    systemRestartCommand: sudo shutdown -r now
+    systemShutdownCommand: sudo shutdown now
+  firstRun: false
+  onlineCheck:
+    enabled: false
+  pluginBlacklist:
+    enabled: true
+  secretKey: $SERVER_SECRETKEY
+  seenWizards:
+    corewizard: 3
+    tracking: null
+temperature:
+  profiles:
+  - bed: 100
+    chamber: null
+    extruder: 210
+    name: ABS
+  - bed: 50
+    chamber: null
+    extruder: 190
+    name: PLA
